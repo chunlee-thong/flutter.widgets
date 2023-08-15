@@ -262,7 +262,7 @@ class ItemScrollController {
 
   void _attach(_ScrollablePositionedListState state) {
     assert(this.scrollableListState == null);
-    scrollableListState.scrollableListState = state;
+    this.scrollableListState = state;
   }
 
   void _detach() {
