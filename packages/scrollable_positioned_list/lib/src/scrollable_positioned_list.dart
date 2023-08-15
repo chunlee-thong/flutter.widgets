@@ -248,7 +248,7 @@ class ItemScrollController {
     Curve curve = Curves.linear,
     List<double> opacityAnimationWeights = const [40, 20, 40],
   }) {
-    assert(_scrollableListState != null);
+    assert(scrollableListState != null);
     assert(opacityAnimationWeights.length == 3);
     assert(duration > Duration.zero);
     return scrollableListState!._scrollTo(
@@ -376,10 +376,10 @@ class _ScrollablePositionedListState extends State<ScrollablePositionedList>
   @override
   void didUpdateWidget(ScrollablePositionedList oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (oldWidget.itemScrollController?._scrollableListState == this) {
+    if (oldWidget.itemScrollController?.scrollableListState == this) {
       oldWidget.itemScrollController?._detach();
     }
-    if (widget.itemScrollController?._scrollableListState != this) {
+    if (widget.itemScrollController?.scrollableListState != this) {
       widget.itemScrollController?._detach();
       widget.itemScrollController?._attach(this);
     }
